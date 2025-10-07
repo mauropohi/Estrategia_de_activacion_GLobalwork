@@ -57,10 +57,8 @@
     <header class="bg-white/80 backdrop-blur-sm shadow-sm sticky top-0 z-50">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
             <a href="#" class="flex items-center space-x-3">
-                <div class="flex items-center justify-center h-10 w-10">
-                    <div class="h-5 w-5 rounded-full border-4 border-white ring-2 ring-purple-600"></div>
-                     <div class="h-8 w-8 rounded-full border-2 border-purple-600 absolute"></div>
-                </div>
+                <!-- Logo simplificado a un solo div para mayor robustez -->
+                <div class="h-8 w-8 rounded-full border-2 border-purple-600 flex items-center justify-center bg-white"><div class="h-3 w-3 rounded-full bg-purple-600"></div></div>
                 <span class="font-bold text-2xl text-gray-800 tracking-tight">Globalwork</span>
             </a>
             <div class="hidden md:flex items-center space-x-8">
@@ -74,8 +72,8 @@
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         
-        <section id="strategy" class="text-center mb-20">
-            <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+        <section id="strategy" aria-labelledby="strategy-title" class="text-center mb-20">
+            <h1 id="strategy-title" class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
                 Plan de Acción Integral: <span class="brand-purple">Generación de Oportunidades</span>
             </h1>
             <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
@@ -83,38 +81,38 @@
             </p>
         </section>
 
-        <section class="mb-20">
+        <section aria-labelledby="central-strategy-title" class="mb-20">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold">La Estrategia Central: El Embudo de Diagnóstico</h2>
+                <h2 id="central-strategy-title" class="text-3xl font-bold">La Estrategia Central: El Embudo de Diagnóstico</h2>
                 <p class="mt-3 text-lg text-gray-600 max-w-3xl mx-auto">Cambiamos la conversación. No ofrecemos un PDF, ofrecemos <span class="font-bold brand-purple">claridad personalizada</span>.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="card p-8 bg-gray-50 border-gray-200">
                     <h4 class="font-bold text-xl text-gray-500 text-center">Enfoque Tradicional</h4>
-                    <p class="text-center text-gray-400 text-4xl my-4">👎</p>
+                    <p class="text-center text-gray-400 text-4xl my-4" aria-hidden="true">👎</p>
                     <p class="italic text-center text-gray-600">"Descarga nuestro Ebook"</p>
                     <ul class="mt-6 space-y-2 text-gray-600">
-                        <li><span class="text-red-500 mr-2">✘</span> Genera leads de baja calidad.</li>
-                        <li><span class="text-red-500 mr-2">✘</span> Difícil transición a una venta.</li>
-                        <li><span class="text-red-500 mr-2">✘</span> La reunión es vista como un pitch.</li>
+                        <li><span class="text-red-500 mr-2" aria-hidden="true">✘</span> Genera leads de baja calidad.</li>
+                        <li><span class="text-red-500 mr-2" aria-hidden="true">✘</span> Difícil transición a una venta.</li>
+                        <li><span class="text-red-500 mr-2" aria-hidden="true">✘</span> La reunión es vista como un pitch.</li>
                     </ul>
                 </div>
                 <div class="card p-8 border-2 brand-border">
                      <h4 class="font-bold text-xl brand-purple text-center">Nuestro Enfoque</h4>
-                    <p class="text-center text-4xl my-4">👍</p>
+                    <p class="text-center text-4xl my-4" aria-hidden="true">👍</p>
                     <p class="italic text-center font-semibold">"Descubre el riesgo de tu proceso actual"</p>
                     <ul class="mt-6 space-y-2">
-                        <li><span class="text-green-500 font-bold mr-2">✔</span> Genera leads con un "dolor" autoevaluado.</li>
-                        <li><span class="text-green-500 font-bold mr-2">✔</span> El lead solicita una conversación consultiva.</li>
-                        <li><span class="text-green-500 font-bold mr-2">✔</span> La reunión es vista como el premio.</li>
+                        <li><span class="text-green-500 font-bold mr-2" aria-hidden="true">✔</span> Genera leads con un "dolor" autoevaluado.</li>
+                        <li><span class="text-green-500 font-bold mr-2" aria-hidden="true">✔</span> El lead solicita una conversación consultiva.</li>
+                        <li><span class="text-green-500 font-bold mr-2" aria-hidden="true">✔</span> La reunión es vista como el premio.</li>
                     </ul>
                 </div>
             </div>
         </section>
         
-        <section id="diagnostico" class="mb-20 card p-8 md:p-10">
+        <section id="diagnostico" aria-labelledby="funnel-components-title" class="mb-20 card p-8 md:p-10">
             <div class="text-center mb-10">
-                <h2 class="text-3xl font-bold">Componentes Clave del Embudo</h2>
+                <h2 id="funnel-components-title" class="text-3xl font-bold">Componentes Clave del Embudo</h2>
                 <p class="mt-3 text-lg text-gray-600 max-w-3xl mx-auto">Así es como convertimos un simple formulario en una poderosa herramienta de calificación conversacional.</p>
             </div>
             <div class="space-y-8">
@@ -155,9 +153,9 @@
             </div>
         </section>
 
-        <section id="execution" class="mb-20">
+        <section id="execution" aria-labelledby="execution-title" class="mb-20">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold">Ejecución: Despliegue Secuencial por Capas</h2>
+                <h2 id="execution-title" class="text-3xl font-bold">Ejecución: Despliegue Secuencial por Capas</h2>
                  <p class="mt-3 text-lg text-gray-600 max-w-3xl mx-auto">Una estrategia diseñada para maximizar la eficiencia del presupuesto, usando el canal correcto para la audiencia correcta.</p>
             </div>
             <div class="text-center max-w-2xl mx-auto">
@@ -178,9 +176,9 @@
             </div>
         </section>
         
-        <section id="audiences" class="mb-20 card p-8 md:p-10">
+        <section id="audiences" aria-labelledby="audiences-title" class="mb-20 card p-8 md:p-10">
              <div class="text-center mb-10">
-                <h2 class="text-3xl font-bold">Públicos y Criterios de Exclusión</h2>
+                <h2 id="audiences-title" class="text-3xl font-bold">Públicos y Criterios de Exclusión</h2>
                 <p class="mt-3 text-lg text-gray-600 max-w-3xl mx-auto">Una estrategia quirúrgica para maximizar la relevancia y el retorno de la inversión.</p>
             </div>
             <div>
@@ -206,9 +204,9 @@
             </div>
         </section>
 
-        <section id="emails" class="mb-20">
+        <section id="emails" aria-labelledby="emails-title" class="mb-20">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold">Táctica: La Secuencia de 3 Correos</h2>
+                <h2 id="emails-title" class="text-3xl font-bold">Táctica: La Secuencia de 3 Correos</h2>
                 <p class="mt-3 text-lg text-gray-600 max-w-3xl mx-auto">Cada correo está diseñado para mover al prospecto un paso más cerca de la conversión. Se enviarán en una misma semana (Lun-Mié-Vie).</p>
             </div>
             <div id="accordion-container" class="space-y-4 max-w-3xl mx-auto">
@@ -216,9 +214,9 @@
             </div>
         </section>
         
-        <section id="kpis" class="mb-20 card p-8 md:p-10">
+        <section id="kpis" aria-labelledby="kpis-title" class="mb-20 card p-8 md:p-10">
             <div class="text-center mb-10">
-                <h2 class="text-3xl font-bold">Criterios de Éxito y KPIs</h2>
+                <h2 id="kpis-title" class="text-3xl font-bold">Criterios de Éxito y KPIs</h2>
                  <p class="mt-3 text-lg text-gray-600 max-w-3xl mx-auto">Cómo mediremos el éxito, teniendo en cuenta la naturaleza de la audiencia.</p>
             </div>
             <div>
@@ -244,9 +242,9 @@
             </div>
         </section>
         
-        <section id="investment" class="mb-20">
+        <section id="investment" aria-labelledby="investment-title" class="mb-20">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold">Inversión y Tiempos Clave</h2>
+                <h2 id="investment-title" class="text-3xl font-bold">Inversión y Tiempos Clave</h2>
                 <p class="mt-3 text-lg text-gray-600 max-w-3xl mx-auto">Un plan de acción ágil con un modelo de pago basado en resultados.</p>
             </div>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -277,9 +275,8 @@
         </section>
     </main>
 
-    <footer class="bg-white pt-12">
+    <footer class="bg-white pt-12 pb-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-             <img src="https://i.imgur.com/vHZdU7l.jpg" alt="Banner de Global Work con equipo" class="w-full rounded-lg shadow-md">
              <p class="text-center mt-6 text-gray-500">&copy; 2025 | Propuesta elaborada por Mauricio Posada para Global Work</p>
         </div>
     </footer>
