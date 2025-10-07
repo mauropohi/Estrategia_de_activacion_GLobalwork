@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan de Acción Definitivo | Global Work</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Global Work Purple (#640993), Light Lavender (#E9D5FF), Neutral Grays, Off-White Background (#F9FAFB) -->
+    <!-- Application Structure Plan: This definitive SPA version integrates user feedback for a more dynamic and persuasive presentation. It now leads with a direct strategic comparison, followed by an interactive quiz slider that simulates the user experience. The structure remains a top-down narrative, guiding the client from high-level strategy to granular details like audience exclusions and KPIs, culminating in the financial proposal. -->
+    <!-- Visualization & Content Choices: 
+        - Quiz Questions -> Goal: Simulate/Contextualize -> Viz: Interactive Question Slider -> Interaction: Users click next/prev to slide through questions, making the diagnostic concept tangible and demonstrating the "one question at a time" experience.
+        - Funnel Mechanics -> Goal: Explain -> Viz: Static HTML/CSS Diagram -> Justification: A static visual flow is sufficient here as the core interaction is now in the quiz slider.
+        - Audience Exclusions -> Goal: Clarify -> Viz: Formatted Text Blocks -> Justification: Added specific rules as requested for technical clarity.
+        - KPIs & Budget -> Goal: Inform -> Viz: Highlighted Cards/Text -> Justification: Updated to reflect adjusted expectations for a cold audience and a revised, agile budget.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        :root {
+            --brand-purple: #640993;
+            --brand-light: #E9D5FF;
+            --text-dark: #1F2937;
+            --text-light: #4B5563;
+        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background-color: #F9FAFB; color: var(--text-dark); }
+        .brand-purple { color: var(--brand-purple); }
+        .brand-bg { background-color: var(--brand-purple); }
+        .brand-border { border-color: var(--brand-purple); }
+        .card {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+            transition: all 0.3s ease-in-out;
+        }
+        .card:hover {
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.07), 0 4px 6px -4px rgb(0 0 0 / 0.07);
+            transform: translateY(-4px);
+        }
+        .nav-link:hover { color: var(--brand-purple); }
+        .accordion-button { transition: background-color 0.2s; }
+        .accordion-button.open { background-color: #F3E8FF; }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out; }
+        .quiz-slide {
+            transition: opacity 0.5s ease-in-out;
+        }
+        .slider-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-white/80 backdrop-blur-sm shadow-sm sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-3">
+                <div class="flex items-center justify-center h-10 w-10">
+                    <div class="h-5 w-5 rounded-full border-4 border-white ring-2 ring-purple-600"></div>
+                     <div class="h-8 w-8 rounded-full border-2 border-purple-600 absolute"></div>
+                </div>
+                <span class="font-bold text-2xl text-gray-800 tracking-tight">Globalwork</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#strategy" class="nav-link font-semibold text-gray-600">Estrategia</a>
+                <a href="#diagnostico" class="nav-link font-semibold text-gray-600">Diagnóstico</a>
+                <a href="#execution" class="nav-link font-semibold text-gray-600">Ejecución</a>
+                <a href="#investment" class="nav-link font-semibold text-gray-600">Inversión</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        
+        <section id="strategy" class="text-center mb-20">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+                Plan de Acción Integral: <span class="brand-purple">Generación de Oportunidades</span>
+            </h1>
+            <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+                Una estrategia omnicanal diseñada para reactivar su base de datos y convertir el interés en reuniones de alto valor.
+            </p>
+        </section>
+
+        <section class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold">La Estrategia Central: El Embudo de Diagnóstico</h2>
+                <p class="mt-3 text-lg text-gray-600 max-w-3xl mx-auto">Cambiamos la conversación. No ofrecemos un PDF, ofrecemos <span class="font-bold brand-purple">claridad personalizada</span>.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="card p-8 bg-gray-50 border-gray-200">
+                    <h4 class="font-bold text-xl text-gray-500 text-center">Enfoque Tradicional</h4>
+                    <p class="text-center text-gray-400 text-4xl my-4">👎</p>
+                    <p class="italic text-center text-gray-600">"Descarga nuestro Ebook"</p>
+                    <ul class="mt-6 space-y-2 text-gray-600">
+                        <li><span class="text-red-500 mr-2">✘</span> Genera leads de baja calidad.</li>
+                        <li><span class="text-red-500 mr-2">✘</span> Difícil transición a una venta.</li>
+                        <li><span class="text-red-500 mr-2">✘</span> La reunión es vista como un pitch.</li>
+                    </ul>
+                </div>
+                <div class="card p-8 border-2 brand-border">
+                     <h4 class="font-bold text-xl brand-purple text-center">Nuestro Enfoque</h4>
+                    <p class="text-center text-4xl my-4">👍</p>
+                    <p class="italic text-center font-semibold">"Descubre el riesgo de tu proceso actual"</p>
+                    <ul class="mt-6 space-y-2">
+                        <li><span class="text-green-500 font-bold mr-2">✔</span> Genera leads con un "dolor" autoevaluado.</li>
+                        <li><span class="text-green-500 font-bold mr-2">✔</span> El lead solicita una conversación consultiva.</li>
+                        <li><span class="text-green-500 font-bold mr-2">✔</span> La reunión es vista como el premio.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section id="diagnostico" class="mb-20 card p-8 md:p-10">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold">Componentes Clave del Embudo</h2>
+                <p class="mt-3 text-lg text-gray-600 max-w-3xl mx-auto">Así es como convertimos un simple formulario en una poderosa herramienta de calificación conversacional.</p>
+            </div>
+            <div class="space-y-8">
+                <div>
+                    <h4 class="font-bold text-xl brand-purple">1. La Promesa (Página de Aterrizaje)</h4>
+                    <div class="mt-3 p-4 bg-gray-50 border border-gray-200 rounded-lg">
+                        <p><strong>Título:</strong> "Diagnóstico Rápido: Descubre en 3 minutos el Nivel de Riesgo de tu Proceso de Contratación Actual."</p>
+                        <p><strong>Subtítulo:</strong> "Responde 5 preguntas clave y obtén un puntaje instantáneo sobre qué tan preparado está tu equipo para los desafíos de contratación del 2025."</p>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-xl brand-purple">2. El Diagnóstico (Simulación Interactiva)</h4>
+                    <p class="text-gray-600 mt-2">5 preguntas estratégicas que se deslizan una por una, imitando la experiencia conversacional que tendrá el usuario.</p>
+                    <div class="mt-4 relative bg-gray-100 p-6 rounded-lg min-h-[200px] overflow-hidden">
+                        <div id="quiz-track" class="flex transition-transform duration-500 ease-in-out">
+                            <!-- Slides generated by JS -->
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center mt-4">
+                        <button id="prev-question" class="slider-button bg-gray-200 text-gray-700 font-semibold py-2 px-4 rounded-lg transition-colors hover:bg-gray-300 disabled:bg-gray-100">Anterior</button>
+                        <div id="quiz-progress" class="text-sm font-medium text-gray-500"></div>
+                        <button id="next-question" class="slider-button brand-bg text-white font-semibold py-2 px-4 rounded-lg transition-colors hover:bg-purple-700 disabled:bg-purple-300">Siguiente</button>
+                    </div>
+                     <p class="text-sm text-center text-gray-500 mt-4">La herramienta a utilizar (ej. Typeform) garantizará esta experiencia fluida de una pregunta a la vez.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-xl brand-purple">3. El Puente a la Conversión (Página de Resultados)</h4>
+                     <div class="mt-3 p-4 bg-gray-50 border border-gray-200 rounded-lg">
+                        <p><strong>El CTA:</strong> "Para ayudarte a entender qué significan estos resultados y entregarte un <strong>plan de acción personalizado</strong>, te ofrezco una <strong>Sesión de Revisión Estratégica gratuita</strong> de 15 minutos."</p>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-xl brand-purple">4. La Recompensa (Post-Agenda)</h4>
+                     <div class="mt-3 p-4 bg-gray-50 border border-gray-200 rounded-lg">
+                        <p>El Ebook "El Proceso de Contratación con IA" se entrega <strong>única y exclusivamente</strong> en el correo de confirmación, posicionándolo como un recurso premium.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="execution" class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold">Ejecución: Despliegue Secuencial por Capas</h2>
+                 <p class="mt-3 text-lg text-gray-600 max-w-3xl mx-auto">Una estrategia diseñada para maximizar la eficiencia del presupuesto, usando el canal correcto para la audiencia correcta.</p>
+            </div>
+            <div class="text-center max-w-2xl mx-auto">
+                 <div class="card p-4 text-center">
+                    <h5 class="font-bold">FASE 1: Punta de Lanza (Email)</h5>
+                    <p class="text-sm text-gray-500">Se contacta a toda la base para capturar las conversiones más rápidas y baratas.</p>
+                </div>
+                <div class="text-center flow-arrow my-2"></div>
+                <div class="card p-4 text-center">
+                    <h5 class="font-bold">FASE 2: Activación (Pauta Meta)</h5>
+                    <p class="text-sm text-gray-500">Se impacta con anuncios solo a quienes ignoraron los correos.</p>
+                </div>
+                 <div class="text-center flow-arrow my-2"></div>
+                <div class="card p-4 text-center">
+                    <h5 class="font-bold">FASE 3: Remarketing Segmentado</h5>
+                    <p class="text-sm text-gray-500">Se inicia una conversación personalizada con los más interesados.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="audiences" class="mb-20 card p-8 md:p-10">
+             <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold">Públicos y Criterios de Exclusión</h2>
+                <p class="mt-3 text-lg text-gray-600 max-w-3xl mx-auto">Una estrategia quirúrgica para maximizar la relevancia y el retorno de la inversión.</p>
+            </div>
+            <div>
+                <div class="p-4 rounded-lg bg-blue-50 text-blue-800 mb-6 text-center">
+                    <p><strong class="font-semibold">Aclaración Clave:</strong> Esta campaña está diseñada para impactar y reactivar exclusivamente la base de datos existente, no para adquirir clientes nuevos.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-bold text-xl mb-2">Públicos de Campaña</h4>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li><strong>Email (Fase 1):</strong> La base de datos completa (+40k).</li>
+                             <li><strong>Meta (Fase 2):</strong> +40k contactos, excluyendo a quienes interactuaron con los correos.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-xl mb-2">Reglas de Exclusión (Vital)</h4>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li>Se excluirá en tiempo real a quienes <strong class="font-semibold">completen el quiz</strong> del flujo principal de anuncios.</li>
+                             <li>Se excluirá de **TODAS** las comunicaciones a quienes <strong class="font-semibold">agenden una reunión</strong>.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="emails" class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold">Táctica: La Secuencia de 3 Correos</h2>
+                <p class="mt-3 text-lg text-gray-600 max-w-3xl mx-auto">Cada correo está diseñado para mover al prospecto un paso más cerca de la conversión. Se enviarán en una misma semana (Lun-Mié-Vie).</p>
+            </div>
+            <div id="accordion-container" class="space-y-4 max-w-3xl mx-auto">
+                <!-- Accordion items will be generated by JS -->
+            </div>
+        </section>
+        
+        <section id="kpis" class="mb-20 card p-8 md:p-10">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold">Criterios de Éxito y KPIs</h2>
+                 <p class="mt-3 text-lg text-gray-600 max-w-3xl mx-auto">Cómo mediremos el éxito, teniendo en cuenta la naturaleza de la audiencia.</p>
+            </div>
+            <div>
+                 <div class="p-4 rounded-lg bg-yellow-50 text-yellow-800 mb-6">
+                    <p><strong class="font-semibold">Contexto de la Audiencia:</strong> Es fundamental recordar que la base de datos es grande y en su mayoría "fría" (+1 año de registro). Esto influirá en las métricas iniciales. Nuestro objetivo es identificar a los prospectos con interés latente.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-bold text-xl mb-2">KPI Primario (El Objetivo)</h4>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li><strong>Reuniones Agendadas:</strong> Mínimo 10.</li>
+                            <li><strong>Costo por Reunión (CPR):</strong> Métrica final de rentabilidad.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-xl mb-2">KPIs Secundarios (Salud del Embudo)</h4>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li><strong>Tasa de Conversión de la Landing:</strong> Visitantes que completan el quiz.</li>
+                            <li><strong>Costo por Lead (CPL):</strong> Costo por cada quiz completado.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="investment" class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold">Inversión y Tiempos Clave</h2>
+                <p class="mt-3 text-lg text-gray-600 max-w-3xl mx-auto">Un plan de acción ágil con un modelo de pago basado en resultados.</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="card p-8">
+                    <h4 class="font-bold text-2xl mb-4">Inversión y Garantía</h4>
+                    <p class="text-4xl font-bold brand-purple">$3.000.000 <span class="text-lg font-medium text-gray-500">COP + IVA</span></p>
+                    <ul class="mt-6 space-y-3 text-gray-700">
+                        <li><strong class="font-semibold">Anticipo (50%):</strong> $1.500.000 para iniciar.</li>
+                        <li><strong class="font-semibold">Pago Final (50%):</strong> $1.500.000 condicionado al éxito.</li>
+                        <li><strong class="font-semibold">Incluye:</strong> Costos de herramientas (ej. Typeform).</li>
+                    </ul>
+                    <div class="mt-6 p-4 rounded-lg bg-red-50 text-red-700">
+                        <p><strong class="font-semibold">Garantía:</strong> Si no se generan 10 reuniones, el pago final no se factura.</p>
+                    </div>
+                </div>
+                 <div class="card p-8">
+                    <h4 class="font-bold text-2xl mb-4">Pauta y Tiempos</h4>
+                     <ul class="mt-6 space-y-3 text-gray-700">
+                        <li><strong class="font-semibold">Duración:</strong> 3 a 4 semanas de ejecución.</li>
+                        <li><strong class="font-semibold">Pauta Diaria:</strong> $10.000 - $15.000 COP.</li>
+                        <li><strong class="font-semibold">Pauta Total (Cliente):</strong> $210k - $420k.</li>
+                    </ul>
+                     <div class="mt-6 p-4 rounded-lg bg-blue-50 text-blue-700">
+                        <p><strong class="font-semibold">Nota:</strong> Es un presupuesto de arranque ajustado, enfocado en la máxima eficiencia.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white pt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+             <img src="https://i.imgur.com/vHZdU7l.jpg" alt="Banner de Global Work con equipo" class="w-full rounded-lg shadow-md">
+             <p class="text-center mt-6 text-gray-500">&copy; 2025 | Propuesta elaborada por Mauricio Posada para Global Work</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const emailAccordionData = [
+                {
+                    title: 'Email 1: El Gancho (Problema)',
+                    subject: '[Nombre], ¿tu proceso de contratación tiene un punto ciego?',
+                    content: 'Presenta un problema relevante que resuene con la audiencia para despertar curiosidad. Se enfoca en el riesgo latente.',
+                    cta: 'Descubre tu Nivel de Riesgo en 3 Minutos →'
+                },
+                {
+                    title: 'Email 2: La Agitación del Dolor',
+                    subject: 'El error de $30.000.000 que frena a los equipos de RRHH',
+                    content: 'Conecta el problema abstracto con consecuencias tangibles como la pérdida de tiempo y dinero, haciendo que el "dolor" se sienta real.',
+                    cta: 'Identifica tus Cuellos de Botella Ahora →'
+                },
+                {
+                    title: 'Email 3: La Solución Clara',
+                    subject: 'Tu plan de acción de 3 pasos te espera',
+                    content: 'Crea urgencia y presenta el diagnóstico como la solución lógica e ineludible al problema planteado.',
+                    cta: 'Obtener mi Diagnóstico Estratégico Gratuito →'
+                }
+            ];
+
+            const accordionContainer = document.getElementById('accordion-container');
+            if (accordionContainer) {
+                emailAccordionData.forEach((item, index) => {
+                    const accordionItem = document.createElement('div');
+                    accordionItem.className = 'card overflow-hidden';
+
+                    const button = document.createElement('button');
+                    button.className = 'accordion-button w-full text-left p-5 font-semibold text-lg flex justify-between items-center';
+                    button.innerHTML = `
+                        <span>${item.title}</span>
+                        <span class="transform transition-transform duration-300 text-2xl text-gray-400">+</span>
+                    `;
+                    
+                    const contentDiv = document.createElement('div');
+                    contentDiv.className = 'accordion-content px-5';
+                    contentDiv.innerHTML = `
+                        <div class="pb-5">
+                            <p class="font-semibold">Asunto:</p>
+                            <p class="italic text-gray-600 mb-3">"${item.subject}"</p>
+                            <p class="font-semibold">Cuerpo (Resumen):</p>
+                            <p class="text-gray-600 mb-3">${item.content}</p>
+                            <p class="font-semibold">Llamado a la Acción:</p>
+                            <p class="font-bold brand-purple">"${item.cta}"</p>
+                        </div>
+                    `;
+
+                    accordionItem.appendChild(button);
+                    accordionItem.appendChild(contentDiv);
+                    accordionContainer.appendChild(accordionItem);
+
+                    button.addEventListener('click', () => {
+                        const isOpen = button.classList.toggle('open');
+                        const icon = button.querySelector('span:last-child');
+                        
+                        if (isOpen) {
+                            contentDiv.style.maxHeight = contentDiv.scrollHeight + 'px';
+                            contentDiv.style.paddingTop = '0.5rem';
+                            contentDiv.style.paddingBottom = '1.25rem';
+                            icon.style.transform = 'rotate(45deg)';
+                        } else {
+                            contentDiv.style.maxHeight = '0';
+                            contentDiv.style.paddingTop = '0';
+                            contentDiv.style.paddingBottom = '0';
+                            icon.style.transform = 'rotate(0deg)';
+                        }
+                    });
+                });
+            }
+
+            const quizTrack = document.getElementById('quiz-track');
+            const prevButton = document.getElementById('prev-question');
+            const nextButton = document.getElementById('next-question');
+            const progressIndicator = document.getElementById('quiz-progress');
+
+            const questions = [
+                {
+                    question: "<strong>P1:</strong> ¿Cómo describirías tu proceso actual de verificación de antecedentes?",
+                    options: "Manual / Semi-automatizado / Automatizado"
+                },
+                {
+                    question: "<strong>P2:</strong> ¿Cuánto tiempo le toma a tu equipo completar una verificación para un candidato finalista?",
+                    options: "+1 semana / 3-5 días / -48h"
+                },
+                {
+                    question: "<strong>P3:</strong> En el último año, ¿han tenido algún caso de una mala contratación que pudo evitarse?",
+                    options: "Sí, con impacto / Sí, caso menor / No"
+                },
+                {
+                    question: "<strong>P4:</strong> ¿Cuál es el mayor cuello de botella en tu contratación?",
+                    options: "Carga operativa / Calidad / Riesgo / Falta de data"
+                },
+                {
+                    question: "<strong>P5:</strong> ¿Qué tan activamente están explorando el uso de IA para optimizar la selección?",
+                    options: "No es prioridad / Discutiendo / Probando"
+                }
+            ];
+
+            let currentQuestionIndex = 0;
+
+            function renderQuestions() {
+                if (!quizTrack) return;
+                quizTrack.innerHTML = '';
+                questions.forEach(q => {
+                    const slide = document.createElement('div');
+                    slide.className = 'quiz-slide w-full flex-shrink-0 px-4 text-center';
+                    slide.innerHTML = `
+                        <p class="text-lg font-semibold text-gray-800">${q.question}</p>
+                        <p class="text-sm text-gray-500 mt-2">${q.options}</p>
+                    `;
+                    quizTrack.appendChild(slide);
+                });
+            }
+
+            function updateSlider() {
+                if (!quizTrack || !progressIndicator || !prevButton || !nextButton) return;
+                quizTrack.style.transform = `translateX(-${currentQuestionIndex * 100}%)`;
+                progressIndicator.textContent = `Pregunta ${currentQuestionIndex + 1} de ${questions.length}`;
+                prevButton.disabled = currentQuestionIndex === 0;
+                nextButton.disabled = currentQuestionIndex === questions.length - 1;
+            }
+
+            if (quizTrack) {
+                renderQuestions();
+                updateSlider();
+
+                nextButton.addEventListener('click', () => {
+                    if (currentQuestionIndex < questions.length - 1) {
+                        currentQuestionIndex++;
+                        updateSlider();
+                    }
+                });
+
+                prevButton.addEventListener('click', () => {
+                    if (currentQuestionIndex > 0) {
+                        currentQuestionIndex--;
+                        updateSlider();
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
